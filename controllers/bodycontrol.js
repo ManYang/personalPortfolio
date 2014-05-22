@@ -14,12 +14,12 @@ function bodyControl ($scope){
 		frictionY: 0.8
 	});
 
-	$scope.currentPage = 'home';
+	$scope.currentPage = 'about';
 
 	$scope.loadPage = function($page){
 		switch($page){
-			case home:
-				loadPageHome();
+			case about:
+				loadPageAbout();
 				break;
 
 			case exp:
@@ -29,16 +29,12 @@ function bodyControl ($scope){
 				loadPageSocial();
 				break;
 			default:
-				loadPageHome();
+				loadPageAbout);
 		}
 	}
 
-	loadPageHome = function(){
-		currentPage = "home";
-	}
-	loadPageWork = function(){
-		console.log("loadPageWork");
-		currentPage = "work";
+	loadPageAbout = function(){
+		currentPage = "about";
 	}
 
 	hideAllPages = function(){

@@ -15,14 +15,9 @@ function bodyControl ($scope, $location) {
 
 	$scope.loadPage = function($page){
 		switch($page){
-			case 'home':
-				loadPageHome();
-				break;
+
 			case 'about':
 				loadPageAbout();
-				break;
-			case 'work':
-				loadPageWork();
 				break;
 			case 'exp':
 				loadPageExp();
@@ -30,27 +25,17 @@ function bodyControl ($scope, $location) {
 			case 'social':
 				loadPageSocial();
 				break;
-			case 'contact':
-				loadPageContact();
-				break;
+
 			default:
-				loadPageHome();
+				loadPageAbout();
 		}
 		$("body").animate({scrollTop: top}, "slow");
 	};
 
-	loadPageHome = function(){
-		$scope.currentPage = "home";
-		$scope.changeTarget("home");
-		setTimeout(function(){$('.carousel').carousel();},1000);
-	};
+
 	loadPageAbout = function(){
 		$scope.currentPage = "about";
 		$scope.changeTarget("about");
-	};
-	loadPageWork = function(){
-		$scope.currentPage = "work";
-		$scope.changeTarget("work");
 	};
 	loadPageExp = function(){
 		$scope.currentPage = "exp";
@@ -60,10 +45,7 @@ function bodyControl ($scope, $location) {
 		$scope.currentPage = "social";
 		$scope.changeTarget("social");
 	};
-	loadPageContact = function(){
-		$scope.currentPage = "contact";
-		$scope.changeTarget("contact");
-	};
+
 
 	hideAllPages = function(){
 
