@@ -1,4 +1,4 @@
-var znbdsite = angular.module('znbdsite', ['ngAnimate']);
+var site = angular.module('site', ['ngAnimate']);
 
 function bodyControl ($scope, $location) {
 	
