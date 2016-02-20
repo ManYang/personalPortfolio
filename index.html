@@ -20,8 +20,6 @@
 </head>
 <body ng-controller="bodyControl" id="scene">
 
-
-
     <div class="topbar layer" data-depth="0.00">
         <div class="logocontainer layer" data-depth="0.30"><img class="logo img-circle" src="img/title.jpg" /></div>
 
@@ -36,7 +34,12 @@
     </div>
 
     <div class="pagescontainer layer" data-depth="0.00">
+        <div class='background'>
+            <img src='_images/background.jpg'></img>
+        </div>
+
         <div class="page">
+           
             <div class="pagecontent about layer" data-depth="0.00" ng-include src="'partials/about.html'" ng-show="currentPage=='about'">
             </div>
 
@@ -47,6 +50,7 @@
             </div>
 
         </div>
+    
     </div> 
 
     <div class="container layer" data-depth="0.10"> </div>

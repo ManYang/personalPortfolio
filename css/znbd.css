@@ -9,6 +9,10 @@ body{
 	overflow: auto;
 }
 
+p{
+	text-shadow: 1px 1px 2px #fff, 4px 4px 5px #ffffcc;
+}
+
 
 .menustripe {
 	position: fixed;
@@ -45,14 +49,14 @@ body{
 	background-image: url('../img/znbd-tile5.gif');
 	background-repeat: repeat;
 	background-attachment: fixed;
-	z-index: -20000;
+	z-index: -1;
 }
 
 .pagescontainer{
-	z-index: 89000;
+	position: relative;
 	width: 750px;
-	min-height: 550px;
-	margin-bottom: 20px;
+	min-height: 750px;
+	//padding-bottom: 20px;
 }
 
 .page{
@@ -60,15 +64,27 @@ body{
 		top:200px;
 		left:170px;
 		width: 700px;
-		min-height: 500px;
-		background-color: #FFF;
+		height: 930px;
+		//background-color: #FFF;
 		border: 1px #5E9CC5 solid; 
 
 		-moz-box-shadow: 0px 0px 10px #CCC;
 		-webkit-box-shadow: 3px 3px 5px #CCC;
 		box-shadow: 0px 0px 15px #999;
-
+		z-index: 2
 		overflow:auto;
+
+}
+.background {
+	position: absolute;
+	top:200px;
+	left:170px;
+	width:700px;
+	opacity: 0.3;
+	//filter: alpha(opacity=30);
+	//background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 0;
 
 }
 
@@ -110,3 +126,4 @@ body{
 .zlabel{
 	min-width: 30pt;
 }
+
