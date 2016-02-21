@@ -46,11 +46,6 @@ function bodyControl ($scope, $location) {
 		$scope.changeTarget("social");
 	};
 
-
-	hideAllPages = function(){
-
-	};
-
 	$scope.urlSplit = $scope.location.$$url.split("=");
 	$scope.loadPage($scope.urlSplit[1]);
 }

@@ -12,27 +12,41 @@ body{
 p{
 	text-shadow: 1px 1px 2px #fff, 4px 4px 5px #ffffcc;
 }
+.bg{
+	width: 100%;
+	height: 100%;
+	background-image: url('../img/znbd-tile5.gif');
+	background-repeat: repeat;
+	background-attachment: fixed;
+	z-index: -1;
+}
 
+.logo{
+	position: fixed;
+	top:50px;
+	left:5%;
+	width:120px;
+	height:120px;
+	z-index: 4;
+}
 
 .menustripe {
 	position: fixed;
 	top: 75px;
 	left: 0px;
-	font-size: 16pt;
-	line-height: 18pt;
 	width: 100%;
 	height: 70px;
 	background-color: #5E9CC5;
 	overflow: hidden;
-	z-index: 900033;
 	opacity: 0.3;
+	z-index: 3;
 }
 
-.btntest{
+.btnlist{
 	position: fixed;
-	left:400px;
-	top:100px;
-	z-index: 900038;
+	left: 40%;
+	top:95px;
+	z-index: 4;
 }
 
 .btnmargin{
@@ -40,90 +54,33 @@ p{
 	margin-left: 3px;
 }
 
-.container{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0px;
-	left: 0px;
-	background-image: url('../img/znbd-tile5.gif');
-	background-repeat: repeat;
-	background-attachment: fixed;
-	z-index: -1;
-}
-
-.pagescontainer{
-	position: relative;
-	width: 750px;
-	min-height: 750px;
-	//padding-bottom: 20px;
-}
-
 .page{
-		position: absolute;
-		top:200px;
-		left:170px;
-		width: 700px;
-		height: 930px;
-		//background-color: #FFF;
+		position: relative;
+		width: 80%;
+		margin: 0px auto;
 		border: 1px #5E9CC5 solid; 
-
 		-moz-box-shadow: 0px 0px 10px #CCC;
 		-webkit-box-shadow: 3px 3px 5px #CCC;
 		box-shadow: 0px 0px 15px #999;
-		z-index: 2
+		z-index: 2;
+		padding:20px;
 		overflow:auto;
-
 }
+
 .background {
-	position: absolute;
-	top:200px;
-	left:170px;
-	width:700px;
-	opacity: 0.3;
-	//filter: alpha(opacity=30);
-	//background-size: 100%;
     background-repeat: no-repeat;
-    z-index: 0;
-
-}
-
-.pagecontent{
-	margin:20px;
-	
-}
-
-.logo{
-	position: fixed;
-	top:50px;
-	left:50px;
-	z-index: 900041;
-	width:120px;
-	height:120px;
-}
-
-.logocontainer{
-	z-index: 900040;
-	width: 250px;
-	height: 200px;
-}
-
-#news{
-	min-height: 105px;
-}
-
-#news:after {
-    content:"\a";
-    white-space: pre;
+    background-image: url('../_images/background.jpg');
+    background-size: 100%;
 }
 
 .portraitimg{
-	/*border: 1px solid #ccc;*/
+	border: 1px solid #ccc;
 	float: left;
 	margin: 10px 20px 20px 0;
 }
 
 .zlabel{
-	min-width: 30pt;
+	min-width: 30px;
+	min-height: 15px;
 }
 
