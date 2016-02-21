@@ -2,23 +2,24 @@
     <html ng-app="site">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     	<script type="text/javascript" src="lib/angular.1.2rc2.min.js"></script>
         <script type="text/javascript" src="lib/angular-route.min.js"></script>
         <script type="text/javascript" src="lib/angular-animate.min.js"></script>
         <script type="text/javascript" src="lib/easeljs-0.6.1.min.js"></script>
-        <script type="text/javascript" src="js/site.js"></script>
+        <script type="text/javascript" src="controller/site.js"></script>
         <script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
         <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
     	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    	<link rel="stylesheet" media="(min-width: 1px) and (max-width: 800px)" href="css/znbd-mobile.css">
-        <link rel="stylesheet" media="(min-width:801px)" href="css/znbd.css">
+        <link rel="stylesheet" href="css/site.css">
         <link rel="stylesheet" href="css/animations.css">
     </head>
     <body ng-controller="bodyControl" id="scene" class='bg'>
+
+        <ng-view></ng-view>
+
         <div class="menustripe"></div>
 
         <div class="container-fluid" >
@@ -38,18 +39,14 @@
         </div>
 
         <div class="container-fluid" >
-<!--             <div class='background'>
-                    <img src='_images/background.jpg'></img>
-            </div>
- -->
             <div class="page background">
-                <div class="pagecontent"  ng-include src="'partials/about.html'" ng-show="currentPage=='about'">
+                <div class="pagecontent"  ng-show="currentPage=='about'" ng-include="'partials/about.html'">
                 </div>
 
-                <div class="pagecontent" ng-include src="'partials/social.html'" ng-show="currentPage=='social'">
+                <div class="pagecontent" ng-include="'partials/social.html'" ng-show="currentPage=='social'">
                 </div>
 
-                <div class="pagecontent" ng-include src="'partials/exp.html'" ng-show="currentPage=='exp'">
+                <div class="pagecontent" ng-include="'partials/exp.html'" ng-show="currentPage=='exp'">
                 </div>
 
             </div>
