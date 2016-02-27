@@ -6,19 +6,23 @@
 			templateUrl:'../partials/about.html',
 			controller:'bodyControl'
 		})
-		.when('exp',
+		.when('/exp',
 		{
 			templateUrl:'../partials/exp.html',
 			controller:'bodyControl'
 		})
-		.when('social',
+		.when('/social',
 		{
 			templateUrl:'../partials/social.html',
 			controller:'bodyControl'
+		})
+		.otherwise({
+			redirectTo: '/'
 		});
-	})
+	})	
 	.controller('bodyControl', function($scope, $location){
-		$scope.location = $location;
+		//$scope.location = $location;
+		//console.log($scope.location.$$url);
 
 		// $scope.$watch('location.search()', function() {
 		// 	$scope.target = ($location.search()).target;
@@ -30,15 +34,15 @@
 
 		$scope.currentPage = 'about';
 
-		$scope.loadPage = function($page){
-			if($page){
-				$scope.currentPage =$page;
-				//$scope.changeTarget($page);				
-			}
+		// $scope.loadPage = function($page){
+		// 	if($page){
+		// 		$scope.currentPage =$page;
+		// 		//console.log();
+		// 		//$scope.changeTarget($page);	
+		// 	}
 
-			$("body").animate({scrollTop: top}, "slow");
-		};
-
+		// 	$("body").animate({scrollTop: top}, "slow");
+		// };	
 		//$scope.urlSplit = $scope.location.$$url.split("=");
 		//$scope.loadPage($scope.urlSplit[1]);
 	});
