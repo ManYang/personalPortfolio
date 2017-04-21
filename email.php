@@ -1,5 +1,5 @@
 <?php 
-$sendTo = "manyang1989@gmail.com"; 
+$sendTo = "myang3@memphis.edu"; 
 $subject = "Inquiry";
 
 $headers = "From: " . $_POST["name"]; 

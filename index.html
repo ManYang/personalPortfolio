@@ -1,60 +1,61 @@
-    <!DOCTYPE html>
-    <html ng-app="site">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script type="text/javascript" src="lib/angular.1.2rc2.min.js"></script>
-        <script type="text/javascript" src="lib/angular-route.min.js"></script>
-        <script type="text/javascript" src="lib/angular-animate.min.js"></script>
-        <script type="text/javascript" src="lib/easeljs-0.6.1.min.js"></script>
-        <script type="text/javascript" src="controller/site.js"></script>
-        <script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html ng-app="znbdsite">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/site.css">
-        <link rel="stylesheet" href="css/animations.css">
-    </head>
-    <body ng-controller="bodyControl" id="scene" class='bg'>
+	<script type="text/javascript" src="lib/angular.1.2rc2.min.js"></script>
+    <script type="text/javascript" src="lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/easeljs-0.6.1.min.js"></script>
+    <script type="text/javascript" src="js/znbdapp.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" media="(min-width: 1px) and (max-width: 800px)" href="css/znbd-mobile.css">
+    <link rel="stylesheet" media="(min-width:801px)" href="css/znbd.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="../css/homepage.css" type="text/css" charset="utf-8">
+
+</head>
+<body ng-controller="bodyControl" id="scene">
+
+<div class="ribbon right grey">
+  <a href="http://106.186.27.22">Back to home page</a>
+</div>
 
 
-        <div class="menustripe"></div>
+    <div class="topbar layer" data-depth="0.00">
+        <div class="logocontainer layer" data-depth="0.30"><img class="logo img-circle" src="img/title.jpg" /></div>
 
-        <div class="container-fluid" >
+        <div class="btntest ">
+            <button class="btnmargin btn {{currentPage!='about' && 'btn-info' || 'btn-primary' }}" ng-click="loadPage('about')"><i class="icon-white icon-leaf"></i> about</button>
+            <button class="btnmargin btn {{currentPage!='exp' && 'btn-info' || 'btn-primary' }}" ng-click="loadPage('exp')"><i class="icon-white icon-briefcase"></i> experience</button>
+            <button class="btnmargin btn {{currentPage!='social' && 'btn-info' || 'btn-primary' }}" ng-click="loadPage('social')"><i class="icon-white icon-thumbs-up"></i> social</button>
+        </div>
 
-            <div class="row-fluid">
-                <div class='span4'>
-                    <img class="logo img-circle" src="img/title.jpg" />
-                </div>
-                <div class='span8 btnlist'> 
-                    <a class="btnmargin btn {{currentPage=='about'? 'btn-primary': 'btn-info'}}" href='#'>
-                        <span ng-click="currentPage='about'">
-                            <i class="icon-white icon-leaf"></i>about
-                        </span>
-                    </a>
-                    <a class="btnmargin btn {{currentPage=='exp'? 'btn-primary': 'btn-info'}}" href='#/exp'>
-                        <span ng-click="currentPage='exp'">
-                        <i class="icon-white icon-briefcase"></i>experience
-                        </span>
-                    </a>
-                    <a class="btnmargin btn {{currentPage=='social'? 'btn-primary': 'btn-info'}}" href='#/social'>
-                        <span ng-click="currentPage='social'">
-                        <i class="icon-white icon-thumbs-up"></i>social
-                        </span>
-                    </a>
-             </div>
-         </div>
+        <div class="menustripe">
+        </div>
+    </div>
 
-     </div>
- </div>
+    <div class="pagescontainer layer" data-depth="0.00">
+        <div class="page">
+            <div class="pagecontent about layer" data-depth="0.00" ng-include src="'partials/about.html'" ng-show="currentPage=='about'">
+            </div>
 
- <div class="container-fluid" >
-    <div class="page background">
-        <div class="pagecontent">
-         <ng-view></ng-view>
-     </div>
- </div>
-</div> 
+            <div class="pagecontent social layer" ng-include src="'partials/social.html'" data-depth="0.00" ng-show="currentPage=='social'">
+            </div>
+
+            <div class="pagecontent exp layer" data-depth="0.00" ng-include src="'partials/exp.html'" ng-show="currentPage=='exp'">
+            </div>
+
+        </div>
+    </div> 
+
+    <div class="container layer" data-depth="0.10"> </div>
+    <!--<div class="bgdiv2 layer" data-depth="0.90" width="100%" height="100%"></div>-->
+
 </body>
 </html>
